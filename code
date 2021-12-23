@@ -1,0 +1,33 @@
+# method 1
+if __name__ == '__main__':
+    (_, A) = (int(input()),set(map(int, input().split())))
+    B = int(input())
+    for _ in range(B):
+        (command, newSet) = (input().split()[0],set(map(int, input().split())))
+        getattr(A, command)(newSet)  
+    print (sum(A))
+    
+    
+    #method 2
+def operations():
+    global output
+    ol=input().split()
+    operation = ol[0]
+    newset=set(map(int,input().split()))
+    if operation == 'intersection_update':
+        a1.intersection_update(newset)
+    elif operation == 'update':
+        a1.update(newset)
+    elif operation =='systematic_difference_update':
+        a1.symmetric_difference_update(newset)
+    elif operation == 'difference_update':
+        a1.difference_update(newset)
+    output=sum(a1)    
+    
+    
+a=int(input())
+a1=set(map(int,input().split()))
+n=int(input())
+for i in range(n):
+    operations()
+print(output)      
